@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservice.admedika2u.com/reimservice.asmx" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://webservice.admedika2u.com/reimservice.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservice.admedika2u.com/reimservice.asmx">
+      <s:element name="EXECUTE_HEADER_DETAIL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="h" type="tns:ArrayOfHEADER_POINT" />
+            <s:element minOccurs="0" maxOccurs="1" name="d" type="tns:ArrayOfDETAIL_POINT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHEADER_POINT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HEADER_POINT" type="tns:HEADER_POINT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HEADER_POINT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PayorID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorporateID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClaimProcessStatus" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdmedikaClaimsID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProviderCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdmissionDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DischargeDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DurationDays" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoverageType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlanID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiagnosisCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiagnosisDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmmountIncurred" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmmountApproved" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmmountNotApproved" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalExcessPaid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisabilityNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="HospitalInvoiceID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDETAIL_POINT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DETAIL_POINT" type="tns:DETAIL_POINT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DETAIL_POINT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlanID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoverageType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayorID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorporateID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BenefitCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BenefitDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmmountIncurred" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmmountApproved" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmmountNotApproved" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExcessPaid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReasonCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EXECUTE_HEADER_DETAILResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EXECUTE_HEADER_DETAILResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SERVER_LOGIN" type="tns:SERVER_LOGIN" />
+      <s:complexType name="SERVER_LOGIN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Payor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EXECUTE_HEADER_DETAILSoapIn">
+    <wsdl:part name="parameters" element="tns:EXECUTE_HEADER_DETAIL" />
+  </wsdl:message>
+  <wsdl:message name="EXECUTE_HEADER_DETAILSoapOut">
+    <wsdl:part name="parameters" element="tns:EXECUTE_HEADER_DETAILResponse" />
+  </wsdl:message>
+  <wsdl:message name="EXECUTE_HEADER_DETAILSERVER_LOGIN">
+    <wsdl:part name="SERVER_LOGIN" element="tns:SERVER_LOGIN" />
+  </wsdl:message>
+  <wsdl:portType name="ReimProcessingSoap">
+    <wsdl:operation name="EXECUTE_HEADER_DETAIL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reimbursement processing will received header &amp; detail array type to the server.</wsdl:documentation>
+      <wsdl:input message="tns:EXECUTE_HEADER_DETAILSoapIn" />
+      <wsdl:output message="tns:EXECUTE_HEADER_DETAILSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReimProcessingSoap" type="tns:ReimProcessingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EXECUTE_HEADER_DETAIL">
+      <soap:operation soapAction="http://webservice.admedika2u.com/reimservice.asmx/EXECUTE_HEADER_DETAIL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EXECUTE_HEADER_DETAILSERVER_LOGIN" part="SERVER_LOGIN" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReimProcessingSoap12" type="tns:ReimProcessingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EXECUTE_HEADER_DETAIL">
+      <soap12:operation soapAction="http://webservice.admedika2u.com/reimservice.asmx/EXECUTE_HEADER_DETAIL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EXECUTE_HEADER_DETAILSERVER_LOGIN" part="SERVER_LOGIN" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReimProcessing">
+    <wsdl:port name="ReimProcessingSoap" binding="tns:ReimProcessingSoap">
+      <soap:address location="http://webservice.admedika2u.com/reimservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReimProcessingSoap12" binding="tns:ReimProcessingSoap12">
+      <soap12:address location="http://webservice.admedika2u.com/reimservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
